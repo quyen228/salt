@@ -2,8 +2,9 @@ import numpy as np
 from copy import deepcopy
 from typing import Tuple
 
+
 def get_preprocess_shape(
-    oldh: int, oldw: int, long_side_length: int
+        oldh: int, oldw: int, long_side_length: int
 ) -> Tuple[int, int]:
     """
     Compute the output size given input size and target long side length.

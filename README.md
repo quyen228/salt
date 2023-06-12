@@ -5,30 +5,39 @@ Uses the Segment-Anything Model By Meta AI and adds a barebones interface to lab
 Under active development, apologies for rough edges and bugs. Use at your own risk.
 
 ## Installation
-
-1. Install [Segment Anything](https://github.com/facebookresearch/segment-anything) on any machine with a GPU. (Need not be the labelling machine.)
-2. Create a conda environment using `conda env create -f environment.yaml` on the labelling machine (Need not have GPU).
-3. (Optional) Install [coco-viewer](https://github.com/trsvchn/coco-viewer) to scroll through your annotations quickly.
+### For mac M1 
+Open your terminal and run 
+```shell
+conda env create -f environment.yaml
+```
+```shell
+conda activate sam 
+```
+### For Win/Linux 
+```shell
+conda create -n sam python=3.9 
+```
+```shell
+conda activate sam 
+```
+```shell
+pip install -r requirements.txt
+```
 
 ## Usage
-
-1. Setup your dataset in the following format `<dataset_name>/images/*` and create empty folder `<dataset_name>/embeddings`.
-    - Annotations will be saved in `<dataset_name>/annotations.json` by default.
-2. Copy the `helpers` scripts to the base folder of your `segment-anything` folder.
-    - Call `extract_embeddings.py` to extract embeddings for your images.
-    - Call `generate_onnx.py` generate `*.onnx` files in models.
-4. Copy the models in `models` folder. 
-5. Symlink your dataset in the SALT's root folder as `<dataset_name>`.
-6. Call `segment_anything_annotator.py` with argument `<dataset_name>` and categories `cat1,cat2,cat3..`.
-    - There are a few keybindings that make the annotation process fast.
+1. Please use the hcmus account to download the dataset in this [link](https://studenthcmusedu.sharepoint.com/:u:/r/sites/Thgicmytnh/Shared%20Documents/%C4%90%E1%BB%93%20%C3%A1n/DATASET/image-emb.zip?csf=1&web=1&e=OIokFH), and extract it to the current folder
+2. Download the .onnx model in this [link](https://github.com/quyen228/salt/releases/download/v0.1.0/sam_onnx.570_520.onnx), and save it to `models` folder
+3. Run:
+```shell
+python segment_anything_annotator.py 
+```
+    There are a few keybindings that make the annotation process fast.
     - Click on the object using left clicks and right click (to indicate outside object boundary).
     - `n` adds predicted mask into your annotations. (Add button)
     - `r` rejects the predicted mask. (Reject button)
     - `a` and `d` to cycle through images in your your set. (Next and Prev)
     - `l` and `k` to increase and decrease the transparency of the other annotations.
     - `Ctrl + S` to save progress to the COCO-style annotations file.
-7. [coco-viewer](https://github.com/trsvchn/coco-viewer) to view your annotations.
-    - `python cocoviewer.py -i <dataset> -a <dataset>/annotations.json`
 
 ## Demo
 

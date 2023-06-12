@@ -1,0 +1,10 @@
+numpy~=1.24.3
+opencv-python~=4.7.0.72
+onnxruntime~=1.15.0
+pycocotools~=2.0.6
+scikit-image~=0.21.0
+simplification~=0.6.11
+distinctipy~=1.2.2
+torch~=2.0.1
+tqdm~=4.65.0
+PyQt5~=5.15.9
