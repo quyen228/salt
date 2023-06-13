@@ -25,7 +25,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-1. Please use the hcmus account to download the dataset in this [link](https://studenthcmusedu.sharepoint.com/:u:/r/sites/Thgicmytnh/Shared%20Documents/%C4%90%E1%BB%93%20%C3%A1n/DATASET/image-emb.zip?csf=1&web=1&e=OIokFH), and extract it to the current folder
+1. Please use the hcmus account to download the dataset in this [link](https://studenthcmusedu.sharepoint.com/:u:/r/sites/Thgicmytnh/Shared%20Documents/%C4%90%E1%BB%93%20%C3%A1n/DATASET/dataset.zip?csf=1&web=1&e=6VtJTd), and extract it to the current folder
 2. Download the .onnx model in this [link](https://github.com/quyen228/salt/releases/download/v0.1.0/sam_onnx.570_520.onnx), and save it to `models` folder
 3. Run:
 ```shell
