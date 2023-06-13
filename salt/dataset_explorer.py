@@ -151,6 +151,7 @@ class DatasetExplorer:
 
     def get_image_data(self, image_id):
         image_name = self.coco_json["images"][image_id]["file_name"]
+        print(image_id, image_name)
         image_path = os.path.join(self.dataset_folder, image_name)
         embedding_path = os.path.join(
             self.dataset_folder,

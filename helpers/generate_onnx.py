@@ -69,6 +69,7 @@ def save_onnx_model(checkpoint, model_type, onnx_model_path, orig_im_size, opset
         )
         os.remove(temp_model_path)
 
+
 def main(checkpoint_path, model_type, onnx_models_path, dataset_path, opset_version, quantize):
     if not os.path.exists(onnx_models_path):
         os.makedirs(onnx_models_path)
@@ -86,11 +87,11 @@ def main(checkpoint_path, model_type, onnx_models_path, dataset_path, opset_vers
         onnx_model_path = os.path.join(onnx_models_path, f"sam_onnx.{orig_im_size[0]}_{orig_im_size[1]}.onnx")
         save_onnx_model(checkpoint_path, model_type, onnx_model_path, orig_im_size, opset_version, quantize)
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkpoint-path", type=str, default="./sam_vit_h_4b8939.pth")
-    parser.add_argument("--model_type", type=str, default="default")
+    parser.add_argument("--model_type", type=str, default="vit_h")
     parser.add_argument("--onnx-models-path", type=str, default="./models")
     parser.add_argument("--dataset-path", type=str, default="./dataset")
     parser.add_argument("--opset-version", type=int, default=15)
