@@ -31,6 +31,19 @@ pip install -r requirements.txt
 ```shell
 python segment_anything_annotator.py 
 ```
+```shell
+usage: segment_anything_annotator.py [-h]
+                                     [--onnx-models-path ONNX_MODELS_PATH]
+                                     [--dataset-path DATASET_PATH]
+                                     [--categories CATEGORIES]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --onnx-models-path ONNX_MODELS_PATH
+  --dataset-path DATASET_PATH
+  --categories CATEGORIES
+
+```
     There are a few keybindings that make the annotation process fast.
     - Click on the object using left clicks and right click (to indicate outside object boundary).
     - `n` adds predicted mask into your annotations. (Add button)
